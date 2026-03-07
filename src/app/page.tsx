@@ -61,7 +61,7 @@ export default function Home() {
               {/* Avatar */}
               <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-[#FF6B35]">
                 <Image
-                  src="https://avatars.githubusercontent.com/u/76663779?v=4"
+                  src="https://unavatar.io/x/AnasKhan0607"
                   alt="Anas Khan"
                   width={128}
                   height={128}
