@@ -17,6 +17,33 @@ export interface Project {
 export const activeProjects: Project[] = [
   {
     id: 1,
+    name: "FlipPilot",
+    description: "AI-powered resale automation platform. Find deals, track inventory, and maximize profits. Almost ready for launch!",
+    type: "electric",
+    hp: 90,
+    maxHp: 100,
+    level: 38,
+    status: "evolving",
+    moves: ["Next.js", "AI Analysis", "Inventory", "Analytics"],
+    github: "https://github.com/AnasKhan0607/FlipPilot",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/405.png", // Luxray
+    pokemonName: "Luxray",
+  },
+  {
+    id: 2,
+    name: "Tornado",
+    description: "Video generation platform for automated content creation. Built and sold to a client. 💰",
+    type: "dragon",
+    hp: 100,
+    maxHp: 100,
+    level: 50,
+    status: "active",
+    moves: ["Video Gen", "AI Voices", "Automation", "Client Sold"],
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png", // Rayquaza
+    pokemonName: "Rayquaza",
+  },
+  {
+    id: 3,
     name: "KhanAI",
     description: "Personal AI assistant powered by OpenClaw. Multi-channel messaging, automation, cron jobs, and agent capabilities.",
     type: "electric",
@@ -29,7 +56,7 @@ export const activeProjects: Project[] = [
     pokemonName: "Porygon-Z",
   },
   {
-    id: 2,
+    id: 4,
     name: "PokéInfra",
     description: "This portfolio! Pokemon-themed site combining retro pixel aesthetics with modern web tech.",
     type: "fire",
@@ -43,7 +70,7 @@ export const activeProjects: Project[] = [
     pokemonName: "Chimchar",
   },
   {
-    id: 3,
+    id: 5,
     name: "TikTok Pipeline",
     description: "Automated short-form video generation with AI voices, word-level subtitles, and FFmpeg compositing.",
     type: "psychic",
@@ -56,7 +83,7 @@ export const activeProjects: Project[] = [
     pokemonName: "Rotom",
   },
   {
-    id: 4,
+    id: 6,
     name: "Learning Mode AI",
     description: "AI-powered video learning platform. 200 users, lessons learned. First startup attempt.",
     type: "ghost",
