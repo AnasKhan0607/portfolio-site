@@ -182,12 +182,13 @@ export default function PokeLab() {
         </div>
 
         {/* Network status */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-4 text-center">
           {[
             { label: "NODES", value: "5", color: "#00FF41" },
             { label: "K3S APPS", value: "8+", color: "#5B9BD5" },
-            { label: "PIPELINES", value: "3", color: "#FF6B35" },
+            { label: "PIPELINES", value: "15", color: "#FF6B35" },
             { label: "CAMERAS", value: "1", color: "#FFD93D" },
+            { label: "UPTIME", value: "99.9%", color: "#7B68EE" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
