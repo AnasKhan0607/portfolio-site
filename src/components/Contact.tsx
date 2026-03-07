@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const socials = [
   {
@@ -9,6 +10,8 @@ const socials = [
     url: "https://github.com/AnasKhan0607",
     color: "#333",
     handle: "@AnasKhan0607",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png", // Porygon
+    pokemonName: "Porygon",
   },
   {
     name: "Twitter/X",
@@ -16,6 +19,8 @@ const socials = [
     url: "https://x.com/AnasKhan0607",
     color: "#1DA1F2",
     handle: "@AnasKhan0607",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png", // Pidgeot
+    pokemonName: "Pidgeot",
   },
   {
     name: "LinkedIn",
@@ -23,6 +28,8 @@ const socials = [
     url: "https://linkedin.com/in/anas-k",
     color: "#0A66C2",
     handle: "in/anas-k",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png", // Alakazam
+    pokemonName: "Alakazam",
   },
   {
     name: "Email",
@@ -30,6 +37,8 @@ const socials = [
     url: "mailto:anas.k2001@icloud.com",
     color: "#FF6B35",
     handle: "anas.k2001@icloud.com",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/225.png", // Delibird
+    pokemonName: "Delibird",
   },
 ];
 
@@ -65,14 +74,38 @@ export default function Contact() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#121212] border-2 border-[#333] rounded-lg p-4 hover:border-opacity-100 transition-all group"
+              className="bg-[#121212] border-2 border-[#333] rounded-lg p-4 hover:border-opacity-100 transition-all group relative overflow-hidden"
               style={{ borderColor: `${social.color}40` }}
             >
-              <span className="text-3xl mb-2 block group-hover:scale-110 transition-transform">
-                {social.icon}
-              </span>
-              <p className="font-pixel text-[10px] text-white mb-1">{social.name}</p>
-              <p className="text-[10px] text-[#555] truncate">{social.handle}</p>
+              {/* Pokemon sprite */}
+              <motion.div 
+                className="absolute -right-2 -bottom-2 opacity-20 group-hover:opacity-50 transition-opacity"
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Image
+                  src={social.pokemon}
+                  alt={social.pokemonName}
+                  width={50}
+                  height={50}
+                  style={{ imageRendering: "pixelated" }}
+                />
+              </motion.div>
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 mx-auto mb-2 rounded-lg overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
+                  <Image
+                    src={social.pokemon}
+                    alt={social.pokemonName}
+                    width={40}
+                    height={40}
+                    className="group-hover:scale-110 transition-transform"
+                    style={{ imageRendering: "pixelated" }}
+                  />
+                </div>
+                <p className="font-pixel text-[10px] text-white mb-1">{social.name}</p>
+                <p className="text-[10px] text-[#555] truncate">{social.handle}</p>
+              </div>
             </motion.a>
           ))}
         </div>

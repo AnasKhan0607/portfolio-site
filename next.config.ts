@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
   basePath: "/portfolio-site",
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "unavatar.io",
+      },
+    ],
   },
 };
 

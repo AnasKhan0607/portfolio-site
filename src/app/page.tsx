@@ -88,15 +88,31 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col md:flex-row items-center gap-8">
-              {/* Avatar */}
-              <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-[#FF6B35] relative">
-                <Image
-                  src="https://unavatar.io/x/AnasKhan0607"
-                  alt="Anas Khan"
-                  width={128}
-                  height={128}
-                  className="w-full h-full object-cover"
-                />
+              {/* Avatar + Infernape sidekick */}
+              <div className="relative">
+                <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-[#FF6B35]">
+                  <Image
+                    src="https://unavatar.io/x/AnasKhan0607"
+                    alt="Anas Khan"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Infernape sidekick */}
+                <motion.div
+                  className="absolute -right-8 -bottom-4"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Image
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png"
+                    alt="Infernape"
+                    width={64}
+                    height={64}
+                    style={{ imageRendering: "pixelated" }}
+                  />
+                </motion.div>
               </div>
 
               {/* Info */}

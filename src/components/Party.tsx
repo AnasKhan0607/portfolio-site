@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { activeProjects, partySlots, Project } from "@/data/projects";
 import { typeColors } from "@/data/techStack";
 
@@ -75,6 +76,22 @@ function PartySlot({ project, index, onClick }: { project?: Project; index: numb
       className="aspect-[4/3] bg-[#121212] border-2 rounded-lg p-4 cursor-pointer relative overflow-hidden group"
       style={{ borderColor: `${typeColor}60` }}
     >
+      {/* Pokemon sprite */}
+      <motion.div 
+        className="absolute -right-2 -bottom-2 opacity-30 group-hover:opacity-60 transition-opacity"
+        animate={{ y: [0, -5, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Image
+          src={project.pokemon}
+          alt={project.pokemonName}
+          width={80}
+          height={80}
+          className="pixelated"
+          style={{ imageRendering: "pixelated" }}
+        />
+      </motion.div>
+
       {/* Background glow */}
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity"
@@ -141,30 +158,52 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.9, y: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-[#0a0a0a] border-4 rounded-xl p-6 max-w-lg w-full relative"
+        className="bg-[#0a0a0a] border-4 rounded-xl p-6 max-w-lg w-full relative overflow-hidden"
         style={{ borderColor: typeColor }}
       >
+        {/* Pokemon sprite background */}
+        <motion.div 
+          className="absolute -right-4 -top-4 opacity-20"
+          animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Image
+            src={project.pokemon}
+            alt={project.pokemonName}
+            width={150}
+            height={150}
+            style={{ imageRendering: "pixelated" }}
+          />
+        </motion.div>
+
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 font-pixel text-xs text-[#888] hover:text-white transition-colors"
+          className="absolute top-4 right-4 font-pixel text-xs text-[#888] hover:text-white transition-colors z-10"
         >
           [X]
         </button>
         
         {/* Header */}
-        <div className="flex items-start gap-4 mb-6">
+        <div className="flex items-start gap-4 mb-6 relative z-10">
           <div
-            className="w-20 h-20 rounded-lg flex items-center justify-center text-3xl font-bold shrink-0"
-            style={{ backgroundColor: `${typeColor}20`, color: typeColor }}
+            className="w-20 h-20 rounded-lg flex items-center justify-center shrink-0 overflow-hidden"
+            style={{ backgroundColor: `${typeColor}20` }}
           >
-            {project.name.charAt(0)}
+            <Image
+              src={project.pokemon}
+              alt={project.pokemonName}
+              width={64}
+              height={64}
+              style={{ imageRendering: "pixelated" }}
+            />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
               <h2 className="text-2xl font-bold truncate">{project.name}</h2>
               <span className="font-pixel text-[10px] text-[#555]">Lv.{project.level}</span>
             </div>
+            <p className="font-pixel text-[8px] text-[#888] mb-2">Partner: {project.pokemonName}</p>
             <div className="flex gap-2 flex-wrap">
               <span
                 className="inline-block px-3 py-1 rounded text-xs font-bold uppercase"
@@ -178,18 +217,18 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </div>
         
         {/* HP */}
-        <div className="mb-6">
+        <div className="mb-6 relative z-10">
           <HpBar hp={project.hp} maxHp={project.maxHp} />
         </div>
         
         {/* Description */}
-        <div className="mb-6">
+        <div className="mb-6 relative z-10">
           <p className="font-pixel text-[10px] text-[#555] mb-1">DESCRIPTION</p>
           <p className="text-sm text-[#ccc] leading-relaxed">{project.description}</p>
         </div>
         
         {/* Moves */}
-        <div className="mb-6">
+        <div className="mb-6 relative z-10">
           <p className="font-pixel text-[10px] text-[#555] mb-2">MOVES</p>
           <div className="grid grid-cols-2 gap-2">
             {project.moves.map((move) => (
@@ -205,7 +244,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         
         {/* Links */}
         {(project.github || project.demo) && (
-          <div className="flex gap-3">
+          <div className="flex gap-3 relative z-10">
             {project.github && (
               <a
                 href={project.github}

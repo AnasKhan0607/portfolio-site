@@ -10,7 +10,8 @@ export interface Project {
   moves: string[];
   github?: string;
   demo?: string;
-  image?: string;
+  pokemon: string; // Pokemon sprite URL
+  pokemonName: string;
 }
 
 export const activeProjects: Project[] = [
@@ -24,6 +25,8 @@ export const activeProjects: Project[] = [
     level: 42,
     status: "active",
     moves: ["Discord Bot", "WhatsApp", "Cron Jobs", "Web Search"],
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/474.png", // Porygon-Z
+    pokemonName: "Porygon-Z",
   },
   {
     id: 2,
@@ -36,6 +39,8 @@ export const activeProjects: Project[] = [
     status: "evolving",
     moves: ["Next.js", "Framer Motion", "Tailwind", "TypeScript"],
     github: "https://github.com/AnasKhan0607/portfolio-site",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png", // Chimchar
+    pokemonName: "Chimchar",
   },
   {
     id: 3,
@@ -47,6 +52,8 @@ export const activeProjects: Project[] = [
     level: 30,
     status: "active",
     moves: ["Fish.audio", "Deepgram", "FFmpeg", "Python"],
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/479.png", // Rotom
+    pokemonName: "Rotom",
   },
   {
     id: 4,
@@ -58,8 +65,9 @@ export const activeProjects: Project[] = [
     level: 20,
     status: "resting",
     moves: ["Next.js", "OpenAI", "Vercel", "PostgreSQL"],
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png", // Gengar
+    pokemonName: "Gengar",
   },
-  // Empty slots for future projects
 ];
 
 // Fill remaining slots with empty placeholders
