@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Pokeball from "./Pokeball";
 
 interface LabMachine {
@@ -10,32 +11,40 @@ interface LabMachine {
   status: "online" | "offline" | "sleeping";
   specs: string;
   services: string[];
+  pokemon: string;
+  pokemonName: string;
 }
 
 const labMachines: LabMachine[] = [
   {
     id: 1,
-    name: "OAK-SERVER",
-    type: "Proxmox Host",
+    name: "PI-CLUSTER",
+    type: "Raspberry Pi K3s Cluster",
     status: "online",
-    specs: "32GB RAM • 8 Cores • 2TB NVMe",
-    services: ["K3s", "Portainer", "Traefik"],
+    specs: "3 Nodes • K3s • GitOps",
+    services: ["Prometheus", "Grafana", "Cert-Manager"],
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png", // Magneton (3 units)
+    pokemonName: "Magneton",
   },
   {
     id: 2,
-    name: "BLAINE-NAS",
-    type: "TrueNAS",
+    name: "MAC-MINI",
+    type: "OpenClaw Server",
     status: "online",
-    specs: "16GB RAM • 4x 8TB HDD",
-    services: ["SMB", "NFS", "Plex"],
+    specs: "Apple Silicon • Always-On",
+    services: ["OpenClaw", "Pipelines", "Dev Workflows"],
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/474.png", // Porygon-Z
+    pokemonName: "Porygon-Z",
   },
   {
     id: 3,
-    name: "SURGE-PI",
-    type: "Raspberry Pi 4",
+    name: "SECURITY-PI",
+    type: "AI Vision System",
     status: "online",
-    specs: "8GB RAM • Pi-hole • DNS",
-    services: ["Pi-hole", "Unbound", "WireGuard"],
+    specs: "Pi + Camera • OpenCV",
+    services: ["Face Detection", "Door Lock", "Access Control"],
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png", // Ditto (watches everything)
+    pokemonName: "Ditto",
   },
 ];
 
@@ -49,8 +58,23 @@ function ServerRack({ machine }: { machine: LabMachine }) {
   return (
     <motion.div
       whileHover={{ scale: 1.02, y: -4 }}
-      className="bg-[#0a0a0a] border-2 border-[#333] rounded-lg p-4 relative overflow-hidden"
+      className="bg-[#0a0a0a] border-2 border-[#333] rounded-lg p-4 relative overflow-hidden group"
     >
+      {/* Pokemon sprite background */}
+      <motion.div 
+        className="absolute -right-2 -bottom-2 opacity-20 group-hover:opacity-40 transition-opacity"
+        animate={{ y: [0, -3, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Image
+          src={machine.pokemon}
+          alt={machine.pokemonName}
+          width={60}
+          height={60}
+          style={{ imageRendering: "pixelated" }}
+        />
+      </motion.div>
+
       {/* Status LED */}
       <div className="absolute top-3 right-3 flex items-center gap-2">
         <motion.div
@@ -64,13 +88,15 @@ function ServerRack({ machine }: { machine: LabMachine }) {
         </span>
       </div>
 
-      {/* Server icon */}
-      <div className="w-12 h-12 bg-[#1a1a1a] rounded border border-[#333] flex items-center justify-center mb-3">
-        <div className="space-y-1">
-          <div className="w-6 h-1 bg-[#00FF41] rounded-full opacity-80" />
-          <div className="w-6 h-1 bg-[#5B9BD5] rounded-full opacity-60" />
-          <div className="w-6 h-1 bg-[#FF6B35] rounded-full opacity-40" />
-        </div>
+      {/* Pokemon icon */}
+      <div className="w-12 h-12 bg-[#1a1a1a] rounded border border-[#333] flex items-center justify-center mb-3 overflow-hidden">
+        <Image
+          src={machine.pokemon}
+          alt={machine.pokemonName}
+          width={40}
+          height={40}
+          style={{ imageRendering: "pixelated" }}
+        />
       </div>
 
       {/* Info */}
@@ -158,10 +184,10 @@ export default function PokeLab() {
         {/* Network status */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {[
-            { label: "UPTIME", value: "99.9%", color: "#00FF41" },
-            { label: "SERVICES", value: "12", color: "#5B9BD5" },
-            { label: "CONTAINERS", value: "24", color: "#FF6B35" },
-            { label: "POWER", value: "~150W", color: "#FFD93D" },
+            { label: "NODES", value: "5", color: "#00FF41" },
+            { label: "K3S APPS", value: "8+", color: "#5B9BD5" },
+            { label: "PIPELINES", value: "3", color: "#FF6B35" },
+            { label: "CAMERAS", value: "1", color: "#FFD93D" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
