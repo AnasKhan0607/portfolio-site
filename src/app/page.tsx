@@ -134,18 +134,26 @@ export default function Home() {
 
             {/* Stats bar */}
             <div className="mt-8 pt-6 border-t border-[#333]">
-              <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="grid grid-cols-3 md:grid-cols-5 gap-4 text-center">
                 <div>
-                  <p className="font-pixel text-xs text-[#FF6B35]">EXP</p>
-                  <p className="text-2xl font-bold">3+ YRS</p>
+                  <p className="font-pixel text-[10px] text-[#FF6B35]">EXP</p>
+                  <p className="text-xl md:text-2xl font-bold">3+ YRS</p>
                 </div>
                 <div>
-                  <p className="font-pixel text-xs text-[#5B9BD5]">REPOS</p>
-                  <p className="text-2xl font-bold">25</p>
+                  <p className="font-pixel text-[10px] text-[#5B9BD5]">REPOS</p>
+                  <p className="text-xl md:text-2xl font-bold">25</p>
                 </div>
                 <div>
-                  <p className="font-pixel text-xs text-[#00FF41]">BADGES</p>
-                  <p className="text-2xl font-bold">7</p>
+                  <p className="font-pixel text-[10px] text-[#00FF41]">BADGES</p>
+                  <p className="text-xl md:text-2xl font-bold">7</p>
+                </div>
+                <div>
+                  <p className="font-pixel text-[10px] text-[#FFD93D]">PIPELINES</p>
+                  <p className="text-xl md:text-2xl font-bold">15</p>
+                </div>
+                <div>
+                  <p className="font-pixel text-[10px] text-[#7B68EE]">UPTIME</p>
+                  <p className="text-xl md:text-2xl font-bold">99.9%</p>
                 </div>
               </div>
             </div>
