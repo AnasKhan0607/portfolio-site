@@ -7,10 +7,16 @@ import Party from "@/components/Party";
 import GymBadges from "@/components/GymBadges";
 import EvolutionChain from "@/components/EvolutionChain";
 import Contact from "@/components/Contact";
+import KonamiCode from "@/components/KonamiCode";
+import CursorFollower from "@/components/CursorFollower";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] relative overflow-hidden">
+      {/* Easter Eggs */}
+      <KonamiCode />
+      <CursorFollower />
+      
       {/* Navigation */}
       <Navigation />
       
