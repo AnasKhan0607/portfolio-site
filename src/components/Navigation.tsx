@@ -7,6 +7,7 @@ const navItems = [
   { id: "hero", label: "TRAINER", icon: "👤" },
   { id: "pokedex", label: "POKÉDEX", icon: "📕" },
   { id: "party", label: "PARTY", icon: "⚔️" },
+  { id: "pokelab", label: "POKÉLAB", icon: "🔬" },
   { id: "badges", label: "BADGES", icon: "🏅" },
   { id: "evolution", label: "EVOLUTION", icon: "🔄" },
   { id: "contact", label: "CONNECT", icon: "📡" },

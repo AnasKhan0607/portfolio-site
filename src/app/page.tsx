@@ -10,6 +10,9 @@ import EvolutionChain from "@/components/EvolutionChain";
 import Contact from "@/components/Contact";
 import KonamiCode from "@/components/KonamiCode";
 import CursorFollower from "@/components/CursorFollower";
+import FloatingDecorations from "@/components/FloatingDecorations";
+import PokeLab from "@/components/PokeLab";
+import Pokeball from "@/components/Pokeball";
 
 export default function Home() {
   return (
@@ -17,6 +20,9 @@ export default function Home() {
       {/* Easter Eggs */}
       <KonamiCode />
       <CursorFollower />
+      
+      {/* Floating Pokemon decorations */}
+      <FloatingDecorations />
       
       {/* Navigation */}
       <Navigation />
@@ -39,6 +45,16 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center z-10"
         >
+          {/* Pokeball decoration */}
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex justify-center mb-6"
+          >
+            <Pokeball size={50} variant="ultra" animate />
+          </motion.div>
+
           {/* Pixel art title */}
           <motion.div
             initial={{ scale: 0.9 }}
@@ -55,11 +71,25 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-[#121212] border-4 border-[#FF6B35] rounded-lg p-8 max-w-2xl mx-auto mt-8 pixel-border"
+            className="bg-[#121212] border-4 border-[#FF6B35] rounded-lg p-8 max-w-2xl mx-auto mt-8 pixel-border relative"
           >
+            {/* Corner Pokeballs */}
+            <div className="absolute -top-3 -left-3">
+              <Pokeball size={24} variant="regular" />
+            </div>
+            <div className="absolute -top-3 -right-3">
+              <Pokeball size={24} variant="great" />
+            </div>
+            <div className="absolute -bottom-3 -left-3">
+              <Pokeball size={24} variant="ultra" />
+            </div>
+            <div className="absolute -bottom-3 -right-3">
+              <Pokeball size={24} variant="master" />
+            </div>
+
             <div className="flex flex-col md:flex-row items-center gap-8">
               {/* Avatar */}
-              <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-[#FF6B35]">
+              <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-[#FF6B35] relative">
                 <Image
                   src="https://unavatar.io/x/AnasKhan0607"
                   alt="Anas Khan"
@@ -130,6 +160,9 @@ export default function Home() {
       {/* Party Section */}
       <Party />
 
+      {/* PokéLab Section */}
+      <PokeLab />
+
       {/* Gym Badges Section */}
       <GymBadges />
 
@@ -140,7 +173,13 @@ export default function Home() {
       <Contact />
 
       {/* Footer */}
-      <footer className="py-12 text-center border-t border-[#222]">
+      <footer className="py-12 text-center border-t border-[#222] relative">
+        <div className="flex justify-center gap-4 mb-4">
+          <Pokeball size={20} variant="regular" />
+          <Pokeball size={20} variant="great" />
+          <Pokeball size={20} variant="ultra" />
+          <Pokeball size={20} variant="master" />
+        </div>
         <p className="font-pixel text-xs text-[#555]">
           BUILT WITH 🔥 AND 💧
         </p>
