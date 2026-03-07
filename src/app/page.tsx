@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Pokedex from "@/components/Pokedex";
 
 export default function Home() {
   return (
@@ -97,37 +98,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Pokédex Section Placeholder */}
-      <section className="min-h-screen flex items-center justify-center px-6 py-24">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="font-pixel text-xl md:text-2xl mb-8 text-[#E63946]">
-            POKÉDEX
-          </h2>
-          <p className="text-[#888] max-w-md mx-auto">
-            Tech stack entries coming soon...
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
-            {['Kubernetes', 'Terraform', 'AWS', 'Python', 'TypeScript', 'Docker', 'Go', 'React'].map((tech, i) => (
-              <motion.div
-                key={tech}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-[#121212] border-2 border-[#333] rounded-lg p-4 hover:border-[#FF6B35] transition-colors cursor-pointer"
-              >
-                <p className="font-pixel text-xs">{tech}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      {/* Pokédex Section */}
+      <Pokedex />
 
       {/* Party Section Placeholder */}
       <section className="min-h-screen flex items-center justify-center px-6 py-24">
