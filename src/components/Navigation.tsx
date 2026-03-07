@@ -8,6 +8,8 @@ const navItems = [
   { id: "pokedex", label: "POKÉDEX", icon: "📕" },
   { id: "party", label: "PARTY", icon: "⚔️" },
   { id: "badges", label: "BADGES", icon: "🏅" },
+  { id: "evolution", label: "EVOLUTION", icon: "🔄" },
+  { id: "contact", label: "CONNECT", icon: "📡" },
 ];
 
 export default function Navigation() {
