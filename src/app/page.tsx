@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Pokedex from "@/components/Pokedex";
+import Party from "@/components/Party";
 
 export default function Home() {
   return (
@@ -101,37 +102,8 @@ export default function Home() {
       {/* Pokédex Section */}
       <Pokedex />
 
-      {/* Party Section Placeholder */}
-      <section className="min-h-screen flex items-center justify-center px-6 py-24">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="font-pixel text-xl md:text-2xl mb-8 text-[#5B9BD5]">
-            PARTY
-          </h2>
-          <p className="text-[#888] max-w-md mx-auto mb-12">
-            Current projects in active development
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((slot) => (
-              <motion.div
-                key={slot}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: slot * 0.1 }}
-                viewport={{ once: true }}
-                className="aspect-square bg-[#121212] border-2 border-dashed border-[#333] rounded-lg flex items-center justify-center hover:border-[#5B9BD5] transition-colors"
-              >
-                <span className="font-pixel text-2xl text-[#333]">?</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      {/* Party Section */}
+      <Party />
 
       {/* Footer */}
       <footer className="py-12 text-center border-t border-[#222]">
