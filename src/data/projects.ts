@@ -26,6 +26,7 @@ export const activeProjects: Project[] = [
     status: "evolving",
     moves: ["Next.js", "AI Analysis", "Inventory", "Analytics"],
     github: "https://github.com/AnasKhan0607/FlipPilot",
+    demo: "https://flippilot.ca",
     pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/405.png", // Luxray
     pokemonName: "Luxray",
   },
@@ -57,17 +58,18 @@ export const activeProjects: Project[] = [
   },
   {
     id: 4,
-    name: "PokéInfra",
-    description: "This portfolio! Pokemon-themed site combining retro pixel aesthetics with modern web tech.",
+    name: "Sussy",
+    description: "One phone. All the games. Mobile-first party game PWA that went viral. Multiple hit games in one app!",
     type: "fire",
-    hp: 80,
+    hp: 100,
     maxHp: 100,
-    level: 25,
-    status: "evolving",
-    moves: ["Next.js", "Framer Motion", "Tailwind", "TypeScript"],
-    github: "https://github.com/AnasKhan0607/portfolio-site",
-    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png", // Chimchar
-    pokemonName: "Chimchar",
+    level: 35,
+    status: "active",
+    moves: ["PWA", "Party Games", "Mobile-First", "Viral"],
+    github: "https://github.com/AnasKhan0607/sussy",
+    demo: "https://sussy.xyz",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png", // Infernape
+    pokemonName: "Infernape",
   },
   {
     id: 5,
