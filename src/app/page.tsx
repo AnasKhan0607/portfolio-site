@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Pokedex from "@/components/Pokedex";
 import Party from "@/components/Party";
@@ -57,25 +58,31 @@ export default function Home() {
             className="bg-[#121212] border-4 border-[#FF6B35] rounded-lg p-8 max-w-2xl mx-auto mt-8 pixel-border"
           >
             <div className="flex flex-col md:flex-row items-center gap-8">
-              {/* Avatar placeholder */}
-              <div className="w-32 h-32 bg-gradient-to-br from-[#FF6B35] to-[#5B9BD5] rounded-lg flex items-center justify-center">
-                <span className="font-pixel text-4xl">?</span>
+              {/* Avatar */}
+              <div className="w-32 h-32 rounded-lg overflow-hidden border-4 border-[#FF6B35]">
+                <Image
+                  src="https://avatars.githubusercontent.com/u/76663779?v=4"
+                  alt="Anas Khan"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Info */}
               <div className="text-left flex-1">
                 <p className="font-pixel text-xs text-[#888] mb-2">NAME</p>
-                <p className="text-2xl font-bold mb-4">Developer</p>
+                <p className="text-2xl font-bold mb-4">Anas Khan</p>
                 
                 <p className="font-pixel text-xs text-[#888] mb-2">TYPE</p>
-                <div className="flex gap-2 mb-4">
-                  <span className="px-3 py-1 bg-[#FF6B35] rounded text-sm font-bold">FIRE</span>
-                  <span className="px-3 py-1 bg-[#5B9BD5] rounded text-sm font-bold">WATER</span>
-                  <span className="px-3 py-1 bg-[#00FF41] rounded text-sm font-bold text-black">ELECTRIC</span>
+                <div className="flex gap-2 mb-4 flex-wrap">
+                  <span className="px-3 py-1 bg-[#718096] rounded text-sm font-bold">STEEL</span>
+                  <span className="px-3 py-1 bg-[#FFD93D] rounded text-sm font-bold text-black">ELECTRIC</span>
+                  <span className="px-3 py-1 bg-[#7B68EE] rounded text-sm font-bold">PSYCHIC</span>
                 </div>
 
                 <p className="font-pixel text-xs text-[#888] mb-2">SPECIALTY</p>
-                <p className="text-sm text-[#ccc]">Infrastructure • Cloud • Agentic AI</p>
+                <p className="text-sm text-[#ccc]">Production Engineering • Cloud Infrastructure • Agentic AI</p>
               </div>
             </div>
 
@@ -84,17 +91,22 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="font-pixel text-xs text-[#FF6B35]">EXP</p>
-                  <p className="text-2xl font-bold">∞</p>
+                  <p className="text-2xl font-bold">3+ YRS</p>
                 </div>
                 <div>
-                  <p className="font-pixel text-xs text-[#5B9BD5]">PROJECTS</p>
-                  <p className="text-2xl font-bold">3</p>
+                  <p className="font-pixel text-xs text-[#5B9BD5]">REPOS</p>
+                  <p className="text-2xl font-bold">25</p>
                 </div>
                 <div>
                   <p className="font-pixel text-xs text-[#00FF41]">BADGES</p>
                   <p className="text-2xl font-bold">7</p>
                 </div>
               </div>
+            </div>
+
+            {/* Bio */}
+            <div className="mt-6 pt-6 border-t border-[#333]">
+              <p className="text-sm text-[#888] italic text-center">&quot;Expert Vibe Coder&quot;</p>
             </div>
           </motion.div>
 
@@ -133,7 +145,7 @@ export default function Home() {
           BUILT WITH 🔥 AND 💧
         </p>
         <p className="text-xs text-[#333] mt-2">
-          © {new Date().getFullYear()} • Inspired by Pokémon
+          © {new Date().getFullYear()} Anas Khan • Inspired by Pokémon
         </p>
       </footer>
     </div>

@@ -6,30 +6,30 @@ const socials = [
   {
     name: "GitHub",
     icon: "🐙",
-    url: "https://github.com",
+    url: "https://github.com/AnasKhan0607",
     color: "#333",
-    handle: "@developer",
+    handle: "@AnasKhan0607",
   },
   {
     name: "Twitter/X",
     icon: "🐦",
-    url: "https://x.com",
+    url: "https://x.com/AnasKhan0607",
     color: "#1DA1F2",
-    handle: "@developer",
+    handle: "@AnasKhan0607",
   },
   {
     name: "LinkedIn",
     icon: "💼",
-    url: "https://linkedin.com",
+    url: "https://linkedin.com/in/anas-k",
     color: "#0A66C2",
-    handle: "in/developer",
+    handle: "in/anas-k",
   },
   {
     name: "Email",
     icon: "📧",
-    url: "mailto:hello@example.com",
+    url: "mailto:anas.k2001@icloud.com",
     color: "#FF6B35",
-    handle: "hello@example.com",
+    handle: "anas.k2001@icloud.com",
   },
 ];
 
@@ -88,10 +88,10 @@ export default function Contact() {
           <div className="flex items-start gap-3">
             <span className="text-2xl">💬</span>
             <div className="text-left">
-              <p className="font-pixel text-[10px] text-[#888] mb-2">TRAINER SAYS:</p>
+              <p className="font-pixel text-[10px] text-[#888] mb-2">ANAS SAYS:</p>
               <p className="text-sm text-[#ccc] leading-relaxed">
-                &quot;Always looking for interesting projects, collaborations, 
-                or just a good conversation about tech. Don&apos;t be a stranger!&quot;
+                &quot;Building in public, breaking prod in private. Always down to chat about 
+                infrastructure, AI agents, or startup ideas. Let&apos;s connect!&quot;
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function Contact() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#00FF41]/10 rounded-full">
             <span className="w-2 h-2 bg-[#00FF41] rounded-full animate-pulse" />
-            <span className="font-pixel text-[10px] text-[#00FF41]">AVAILABLE FOR BATTLES</span>
+            <span className="font-pixel text-[10px] text-[#00FF41]">OPEN TO OPPORTUNITIES</span>
           </span>
         </motion.div>
       </motion.div>
