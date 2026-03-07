@@ -1,17 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Navigation from "@/components/Navigation";
 import Pokedex from "@/components/Pokedex";
 import Party from "@/components/Party";
+import GymBadges from "@/components/GymBadges";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] relative overflow-hidden">
+      {/* Navigation */}
+      <Navigation />
+      
       {/* Scanline overlay */}
-      <div className="scanlines fixed inset-0 pointer-events-none z-50" />
+      <div className="scanlines fixed inset-0 pointer-events-none z-20" />
       
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
+      <section id="hero" className="min-h-screen flex flex-col items-center justify-center px-6 relative">
         {/* Animated background gradient */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF6B35] rounded-full blur-[128px] animate-pulse" />
@@ -75,11 +80,11 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-pixel text-xs text-[#5B9BD5]">PROJECTS</p>
-                  <p className="text-2xl font-bold">--</p>
+                  <p className="text-2xl font-bold">3</p>
                 </div>
                 <div>
                   <p className="font-pixel text-xs text-[#00FF41]">BADGES</p>
-                  <p className="text-2xl font-bold">--</p>
+                  <p className="text-2xl font-bold">7</p>
                 </div>
               </div>
             </div>
@@ -104,6 +109,9 @@ export default function Home() {
 
       {/* Party Section */}
       <Party />
+
+      {/* Gym Badges Section */}
+      <GymBadges />
 
       {/* Footer */}
       <footer className="py-12 text-center border-t border-[#222]">
