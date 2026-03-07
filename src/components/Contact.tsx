@@ -10,8 +10,8 @@ const socials = [
     url: "https://github.com/AnasKhan0607",
     color: "#333",
     handle: "@AnasKhan0607",
-    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png", // Porygon
-    pokemonName: "Porygon",
+    pokemon: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/224.png", // Octillery
+    pokemonName: "Octillery",
   },
   {
     name: "Twitter/X",
