@@ -13,14 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | PokéInfra",
-  description: "A Pokemon-themed portfolio showcasing tech, infrastructure, and development work",
-  keywords: ["portfolio", "developer", "infrastructure", "pokemon", "tech"],
-  authors: [{ name: "Developer" }],
+  title: "Anas Khan | PokéInfra Portfolio",
+  description: "Production Engineer & Expert Vibe Coder. Building infrastructure, AI agents, and startups.",
+  keywords: ["Anas Khan", "portfolio", "developer", "infrastructure", "cloud", "AI", "production engineer"],
+  authors: [{ name: "Anas Khan" }],
   openGraph: {
-    title: "Portfolio | PokéInfra",
-    description: "A Pokemon-themed portfolio showcasing tech, infrastructure, and development work",
+    title: "Anas Khan | PokéInfra Portfolio",
+    description: "Production Engineer & Expert Vibe Coder. Building infrastructure, AI agents, and startups.",
     type: "website",
+    images: ["https://avatars.githubusercontent.com/u/76663779?v=4"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@AnasKhan0607",
   },
 };
 
