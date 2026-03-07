@@ -5,6 +5,8 @@ import Navigation from "@/components/Navigation";
 import Pokedex from "@/components/Pokedex";
 import Party from "@/components/Party";
 import GymBadges from "@/components/GymBadges";
+import EvolutionChain from "@/components/EvolutionChain";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -113,10 +115,19 @@ export default function Home() {
       {/* Gym Badges Section */}
       <GymBadges />
 
+      {/* Evolution Chain Section */}
+      <EvolutionChain />
+
+      {/* Contact Section */}
+      <Contact />
+
       {/* Footer */}
       <footer className="py-12 text-center border-t border-[#222]">
         <p className="font-pixel text-xs text-[#555]">
           BUILT WITH 🔥 AND 💧
+        </p>
+        <p className="text-xs text-[#333] mt-2">
+          © {new Date().getFullYear()} • Inspired by Pokémon
         </p>
       </footer>
     </div>
