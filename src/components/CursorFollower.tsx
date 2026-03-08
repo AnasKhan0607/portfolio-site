@@ -59,26 +59,34 @@ export default function CursorFollower() {
         translateY: "-50%",
       }}
     >
-      {/* Chimchar sprite */}
+      {/* Chimchar head */}
       <motion.div
         animate={{
-          scale: isClicking ? 0.8 : 1,
+          scale: isClicking ? 0.85 : 1,
           rotate: isClicking ? -10 : 0,
         }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className="relative"
       >
-        <Image
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png"
-          alt="Chimchar"
-          width={40}
-          height={40}
-          style={{ imageRendering: "pixelated" }}
-          className="drop-shadow-lg"
-        />
+        {/* Cropped to show just the head */}
+        <div className="w-16 h-16 overflow-hidden rounded-full">
+          <Image
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png"
+            alt="Chimchar"
+            width={96}
+            height={96}
+            style={{ 
+              imageRendering: "pixelated",
+              marginTop: "-8px",
+              marginLeft: "0px",
+              transform: "scale(1.4)",
+            }}
+            className="drop-shadow-lg"
+          />
+        </div>
         
         {/* Shadow */}
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-6 h-1 bg-black/20 rounded-full blur-sm" />
+        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-10 h-2 bg-black/20 rounded-full blur-sm" />
       </motion.div>
     </motion.div>
   );
