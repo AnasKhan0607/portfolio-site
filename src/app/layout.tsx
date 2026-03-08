@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description: "Production Engineer & Expert Vibe Coder. Building infrastructure, AI agents, and startups.",
   keywords: ["Anas Khan", "portfolio", "developer", "infrastructure", "cloud", "AI", "production engineer"],
   authors: [{ name: "Anas Khan" }],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Anas Khan | PokéInfra Portfolio",
     description: "Production Engineer & Expert Vibe Coder. Building infrastructure, AI agents, and startups.",
