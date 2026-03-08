@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
+import Image from "next/image";
 
 export default function CursorFollower() {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,7 +59,7 @@ export default function CursorFollower() {
         translateY: "-50%",
       }}
     >
-      {/* Chimchar-inspired sprite */}
+      {/* Chimchar sprite */}
       <motion.div
         animate={{
           scale: isClicking ? 0.8 : 1,
@@ -67,40 +68,14 @@ export default function CursorFollower() {
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
         className="relative"
       >
-        {/* Body */}
-        <div className="relative w-8 h-8">
-          {/* Face circle */}
-          <div className="absolute inset-0 bg-[#FF6B35] rounded-full border-2 border-[#E63946]" />
-          
-          {/* Eyes */}
-          <div className="absolute top-2 left-1.5 w-1.5 h-2 bg-white rounded-full">
-            <div className="absolute bottom-0 left-0.5 w-1 h-1 bg-black rounded-full" />
-          </div>
-          <div className="absolute top-2 right-1.5 w-1.5 h-2 bg-white rounded-full">
-            <div className="absolute bottom-0 right-0.5 w-1 h-1 bg-black rounded-full" />
-          </div>
-          
-          {/* Mouth */}
-          <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-2 h-1 border-b-2 border-[#E63946] rounded-full" />
-          
-          {/* Fire on head */}
-          <motion.div
-            animate={{ 
-              scaleY: [1, 1.2, 1],
-              opacity: [1, 0.8, 1],
-            }}
-            transition={{ 
-              duration: 0.3, 
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute -top-2 left-1/2 -translate-x-1/2"
-          >
-            <div className="w-2 h-3 bg-gradient-to-t from-[#FF6B35] via-[#FFD93D] to-[#FFD93D] rounded-full" 
-              style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
-            />
-          </motion.div>
-        </div>
+        <Image
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png"
+          alt="Chimchar"
+          width={40}
+          height={40}
+          style={{ imageRendering: "pixelated" }}
+          className="drop-shadow-lg"
+        />
         
         {/* Shadow */}
         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-6 h-1 bg-black/20 rounded-full blur-sm" />
