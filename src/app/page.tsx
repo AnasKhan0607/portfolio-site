@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import OaksLab from "@/components/OaksLab";
 
 export default function Home() {
   return (
@@ -96,6 +97,9 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
+
+      {/* Oak's Lab Section */}
+      <OaksLab />
 
       {/* Pokédex Section Placeholder */}
       <section className="min-h-screen flex items-center justify-center px-6 py-24">
