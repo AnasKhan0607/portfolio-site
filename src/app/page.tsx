@@ -13,6 +13,7 @@ import CursorFollower from "@/components/CursorFollower";
 import FloatingDecorations from "@/components/FloatingDecorations";
 import PokeLab from "@/components/PokeLab";
 import Pokeball from "@/components/Pokeball";
+import OaksLab from "@/components/OaksLab";
 
 export default function Home() {
   return (
@@ -169,6 +170,9 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
+
+      {/* Oak's Lab Section */}
+      <OaksLab />
 
       {/* Pokédex Section */}
       <Pokedex />
