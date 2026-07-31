@@ -107,7 +107,7 @@ export const lookingFor: Fact[] = [
   { label: "Age", value: "21–25" },
   { label: "Education", value: "Any level" },
   { label: "Location", value: "Greater Toronto Area — willing to relocate" },
-  { label: "Hijab", value: "Preference for a sister who wears hijab" },
+  { label: "Hijab", value: "Preference for someone who wears hijab" },
   {
     label: "Work",
     value:
