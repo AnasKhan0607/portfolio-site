@@ -16,7 +16,7 @@
 export type Fact = { label: string; value: string };
 
 export const profile = {
-  name: "Anas Khan",
+  name: "Anas",
   tagline: "Software engineer in the GTA. Karachi-born, Canadian-raised.",
 
   // Cropped square from the original so the circle frames the face — letting
@@ -124,8 +124,7 @@ export const weddingNote: string | null =
   "We'd prefer a simple nikah — nothing extravagant, in keeping with the sunnah.";
 
 export const contact = {
-  handledBy: "My mother, Lubna Khalid, handles all inquiries.",
-  name: "Lubna Khalid",
+  handledBy: "My mother handles all inquiries.",
   phoneDisplay: "(647) 720-5135",
   phoneE164: "16477205135",
   whatsappMessage: "Assalamu alaikum, I'm reaching out about Anas's rishta.",

@@ -16,8 +16,12 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "Anas Khan",
+  title: "Anas",
   description: "A short introduction.",
+  // The root layout sets both of these to the full name; without an override
+  // they are inherited and printed into this page's head.
+  authors: [],
+  keywords: [],
   // Unlisted: no search engine should ever index or archive this page.
   // Deliberately NOT added to robots.txt — a Disallow line would advertise
   // the path to anyone who reads the file.
@@ -28,7 +32,7 @@ export const metadata: Metadata = {
     googleBot: { index: false, follow: false, noimageindex: true },
   },
   openGraph: {
-    title: "Anas Khan",
+    title: "Anas",
     description: "A short introduction.",
     type: "profile",
   },
